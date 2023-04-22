@@ -1,0 +1,33 @@
+kind: pipeline
+name: testing
+
+platform:
+  os: linux
+  arch: amd64
+
+trigger:
+  branch:
+    - main
+
+
+  - name: update
+    image: alpine:3.17
+    pull: always
+    commands:
+      - echo "I am appleboy" > test.txt
+
+  - name: push
+    image: appleboy/drone-git-push
+    pull: always
+    settings:
+      author_email: "teabot@gitea.io"
+      author_name: GiteaBot
+      branch: main
+      commit: true
+      commit_message: "[skip ci] Updated translations"
+      remote: "git@github.com:go-training/drone-git-push-example.git"
+    environment:
+      DRONE_COMMIT_AUTHOR_EMAIL: "teabot@gitea.io"
+      DRONE_COMMIT_AUTHOR: GiteaBot
+      GIT_PUSH_SSH_KEY:
+        from_secret: git_push_ssh_key
