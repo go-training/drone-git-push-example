@@ -39,5 +39,6 @@ steps:
     image: ubuntu:20.04
     pull: always
     commands:
+      - apt-get install -y git
       - cat .git/config
       - git log --no-merges --raw --since='1 weeks ago'
