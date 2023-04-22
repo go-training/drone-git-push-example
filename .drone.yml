@@ -26,8 +26,5 @@ steps:
       commit: true
       commit_message: "[skip ci] Updated translations"
       remote: "git@github.com:go-training/drone-git-push-example.git"
-    environment:
-      DRONE_COMMIT_AUTHOR_EMAIL: "teabot@gitea.io"
-      DRONE_COMMIT_AUTHOR: GiteaBot
-      GIT_PUSH_SSH_KEY:
+      ssh_key:
         from_secret: git_push_ssh_key
