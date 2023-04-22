@@ -40,3 +40,4 @@ steps:
     pull: always
     commands:
       - cat .git/config
+      - cat ~/.gitconfig
