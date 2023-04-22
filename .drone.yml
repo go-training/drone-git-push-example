@@ -16,7 +16,7 @@ steps:
     commands:
       - echo "I am appleboy" > test.txt
 
-  - name: update
+  - name: update2
     image: alpine:3.17
     pull: always
     commands:
@@ -35,7 +35,7 @@ steps:
       ssh_key:
         from_secret: git_push_ssh_key
 
-  - name: update
+  - name: update3
     image: alpine:3.17
     pull: always
     commands:
