@@ -17,7 +17,7 @@ steps:
       - echo "I am appleboy" > test.txt
 
   - name: push
-    image: appleboy/drone-git-push
+    image: ghcr.io/appleboy/drone-git-push:latest
     pull: always
     settings:
       author_email: "actions@github.com"
