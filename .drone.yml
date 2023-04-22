@@ -16,6 +16,12 @@ steps:
     commands:
       - echo "I am appleboy" > test.txt
 
+  - name: update
+    image: alpine:3.17
+    pull: always
+    commands:
+      - cat .git/config
+
   - name: push
     image: ghcr.io/appleboy/drone-git-push:latest
     pull: always
@@ -28,3 +34,9 @@ steps:
       remote: "git@github.com:go-training/drone-git-push-example.git"
       ssh_key:
         from_secret: git_push_ssh_key
+
+  - name: update
+    image: alpine:3.17
+    pull: always
+    commands:
+      - cat .git/config
