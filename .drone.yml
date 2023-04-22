@@ -9,7 +9,7 @@ trigger:
   branch:
     - main
 
-
+steps:
   - name: update
     image: alpine:3.17
     pull: always
