@@ -1,1 +1,2 @@
 I am appleboy
+git diff-index --quiet HEAD --ignore-submodules

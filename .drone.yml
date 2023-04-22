@@ -20,8 +20,8 @@ steps:
     image: appleboy/drone-git-push
     pull: always
     settings:
-      author_email: "teabot1@gitea.io"
-      author_name: GiteaBot1
+      author_email: "actions@github.com"
+      author_name: GitHub Actions
       branch: main
       commit: true
       commit_message: "[skip ci] Updated translations"
