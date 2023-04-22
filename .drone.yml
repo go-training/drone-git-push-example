@@ -20,8 +20,8 @@ steps:
     image: ghcr.io/appleboy/drone-git-push:latest
     pull: always
     settings:
-      # author_email: "actions@github.com"
-      # author_name: GitHub Actions
+      author_email: "actions@github.com"
+      author_name: GitHub Actions
       branch: main
       commit: true
       commit_message: "[skip ci] Updated translations"
