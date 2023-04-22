@@ -40,4 +40,4 @@ steps:
     pull: always
     commands:
       - cat .git/config
-      - cat ~/.gitconfig
+      - git log --no-merges --raw --since='1 weeks ago'
