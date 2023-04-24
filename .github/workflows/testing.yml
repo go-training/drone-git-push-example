@@ -16,14 +16,9 @@ concurrency:
 jobs:
   testing:
     runs-on: ubuntu-latest
-    container: golang:1.20-alpine
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: add git make command
-        run: |
-          apk add git
 
       - name: update some text
         run: |
