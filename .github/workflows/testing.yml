@@ -41,3 +41,15 @@ jobs:
           remote: git@github.com:go-training/drone-git-push-example.git
           ssh_key: ${{ secrets.DEPLOY_KEY }}
 
+      - name: update some text 2
+        run: |
+          echo "I am appleboy2" > test.txt
+
+      - name: git push changes 2
+        uses: appleboy/git-push-action@main
+        with:
+          branch: main
+          commit: true
+          commit_message: "[skip ci] Updated changes default user"
+          remote: git@github.com:go-training/drone-git-push-example.git
+          ssh_key: ${{ secrets.DEPLOY_KEY }}
