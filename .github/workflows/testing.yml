@@ -1,0 +1,41 @@
+name: Lint and Testing
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  actions: read
+  contents: read
+  statuses: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    container: golang:1.20-alpine
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: add git make command
+        run: |
+          apk add git make curl perl bash build-base zlib-dev ucl-dev
+
+      - name: update some text
+        run: |
+          echo "I am appleboy" > test.txt
+
+      - name: git push changes
+        uses: appleboy/git-push-action@master
+        with:
+          author_email: "actions@github.com"
+          author_name: GitHub Actions
+          branch: main
+          commit: true
+          commit_message: "[skip ci] Updated changes from github actions"
+          remote: https://appleboy:${{ secrets.GITHUB_TOKEN }}@github.com/go-training/drone-git-push-example.git
+
