@@ -25,6 +25,7 @@ jobs:
       - name: update some text
         run: |
           echo "I am appleboy" > test.txt
+          git config --global --add safe.directory $(realpath .)
 
       - name: git push changes
         uses: appleboy/git-push-action@main
