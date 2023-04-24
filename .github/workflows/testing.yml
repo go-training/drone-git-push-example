@@ -25,7 +25,10 @@ jobs:
       - name: update some text
         run: |
           echo "I am appleboy" > test.txt
-          git config --global --add safe.directory $(realpath .)
+
+      - name: Configure git to trust the workspace despite the different owner
+        run:
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: git push changes
         uses: appleboy/git-push-action@main
