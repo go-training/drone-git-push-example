@@ -33,7 +33,7 @@ jobs:
       - name: git push changes
         uses: appleboy/git-push-action@main
         with:
-          author_email: "actions@github.com"
+          author_email: 41898282+github-actions[bot]@users.noreply.github.com
           author_name: GitHub Actions
           branch: main
           commit: true
