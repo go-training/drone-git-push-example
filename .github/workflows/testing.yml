@@ -30,7 +30,7 @@ jobs:
           echo "I am appleboy" > test.txt
 
       - name: git push changes
-        uses: appleboy/git-push-action@master
+        uses: appleboy/git-push-action@main
         with:
           author_email: "actions@github.com"
           author_name: GitHub Actions
