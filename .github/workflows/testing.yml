@@ -9,16 +9,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: update some text
         run: |
-          echo "I am appleboy" > test.txt
-
-      - name: Configure git to trust the workspace despite the different owner
-        run:
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          openssl rand -hex 16 > test.txt
 
       - name: git push changes
         uses: appleboy/git-push-action@main
