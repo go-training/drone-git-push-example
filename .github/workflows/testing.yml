@@ -27,7 +27,7 @@ jobs:
 
       - name: update some text 2
         run: |
-          echo "I am appleboy2" > test.txt
+          openssl rand -hex 16 > test.txt
 
       - name: git push changes 2
         uses: appleboy/git-push-action@main
@@ -40,7 +40,7 @@ jobs:
 
       - name: update some text 3
         run: |
-          echo "I am appleboy3" > test.txt
+          openssl rand -hex 16 > test.txt
 
       - name: git push changes 3
         uses: appleboy/git-push-action@main
